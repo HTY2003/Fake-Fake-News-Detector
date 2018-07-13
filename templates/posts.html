@@ -1,8 +1,21 @@
 <html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  </head>
+
   <body>
     <a href="/">Back</a>
-    {% for index, post in rows %}
-    <p> {{ index }}  {{ post }} </p>
-    {% endfor %}
+    <h1> Posts by {{ username }} </h1>
+
+    <table>
+      {% for index, post in rows %}
+      <tr>
+	<td width="10%" height="50">{{ index }}</td>
+	<td height="50">{{ post }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <a href="/stats">More stats</a>
    </body>
 </html>
